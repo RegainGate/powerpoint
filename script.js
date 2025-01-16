@@ -20,7 +20,8 @@ const passwordInput = document.getElementById("password-input");
 function updateStep() {
     stepContent.innerHTML = `<iframe src="${steps[currentStep]}" allowfullscreen></iframe>`;
     prevBtn.disabled = currentStep === 0;
-    passwordInput.value = "";
+    nextBtn.disabled = currentStep === steps.length - 1;
+    passwordInput.value = ""; // パスワード入力をリセット
 }
 
 prevBtn.addEventListener("click", () => {
